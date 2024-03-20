@@ -1,0 +1,91 @@
+{
+  "name": "ezx-webapp",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "phoenix",
+  "sourceRoot": "apps/ezx-webapp/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/ezx-webapp",
+        "index": "apps/ezx-webapp/src/index.html",
+        "browser": "apps/ezx-webapp/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/ezx-webapp/tsconfig.app.json",
+        "assets": [
+          "apps/ezx-webapp/src/favicon.ico",
+          "apps/ezx-webapp/src/assets",
+          {
+            "glob": "**/*",
+            "input": "assets/favicons",
+            "output": "assets/favicons"
+          },
+          {
+            "glob": "**/*",
+            "input": "assets/images",
+            "output": "assets/images"
+          }
+        ],
+        "styles": ["apps/ezx-webapp/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/ncs-webapp/src/environments/environment.ts",
+              "with": "apps/ncs-webapp/src/environments/environment.prod.ts"
+            }
+          ],
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "100kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "ezx-webapp:build:production"
+        },
+        "development": {
+          "buildTarget": "ezx-webapp:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "ezx-webapp:build"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "ezx-webapp:build",
+        "staticFilePath": "dist/apps/ezx-webapp/browser"
+      }
+    }
+  }
+}

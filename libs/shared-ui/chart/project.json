@@ -1,0 +1,9 @@
+{
+  "name": "chart",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared-ui/chart/src",
+  "prefix": "phoenix",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

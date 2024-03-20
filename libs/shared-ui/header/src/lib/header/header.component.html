@@ -1,0 +1,36 @@
+
+<header nx-header>
+  <nx-header-row>
+    <nx-header-brand class="left30px">
+      <nx-link>
+        <a href="#">
+          <figure nxFigure>
+            <img
+              ngSrc="/assets/images/allianz-logo.png"
+              alt="Allianz Indonesia" height="29" width="113" />
+          </figure>
+        </a>
+      </nx-link>
+      <nx-header-app-title>{{ appName }}</nx-header-app-title>
+    </nx-header-brand>
+
+    <nx-header-actions showSeparator>
+      <button nxButton="secondary small" type="button" (click)="logoutEmit()">Log out <nx-icon name="arrow-right"></nx-icon></button>
+    </nx-header-actions>
+  </nx-header-row>
+
+  <nx-header-row>
+    <nx-header-navigation class="left30px">
+      <nx-header-navigation-item *ngFor="let menu of appMenus">
+        <a
+          [routerLink]="menu.routerLink"
+          [routerLinkActiveOptions]="{exact: true}"
+          routerLinkActive="is-active"
+          nxHeaderLink
+        >{{ menu.name }}</a>
+      </nx-header-navigation-item>
+    </nx-header-navigation>
+  </nx-header-row>
+</header>
+<div class="header-space"></div>
+

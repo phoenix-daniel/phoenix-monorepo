@@ -1,0 +1,9 @@
+{
+  "name": "login",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared-ui/login/src",
+  "prefix": "phoenix",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

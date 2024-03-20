@@ -1,0 +1,31 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@phoenix/chart": ["libs/shared-ui/chart/src/index.ts"],
+      "@phoenix/dashboard-banner": [
+        "libs/shared-ui/dashboard-banner/src/index.ts"
+      ],
+      "@phoenix/dashboard-card": ["libs/shared-ui/dashboard-card/src/index.ts"],
+      "@phoenix/footer": ["libs/shared-ui/footer/src/index.ts"],
+      "@phoenix/header": ["libs/shared-ui/header/src/index.ts"],
+      "@phoenix/login": ["libs/shared-ui/login/src/index.ts"],
+      "@phoenix/payment": ["libs/shared-ui/payment/src/index.ts"],
+      "@phoenix/statistic": ["libs/shared-ui/statistic/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

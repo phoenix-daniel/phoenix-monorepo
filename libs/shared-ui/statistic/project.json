@@ -1,0 +1,9 @@
+{
+  "name": "statistic",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared-ui/statistic/src",
+  "prefix": "phoenix",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

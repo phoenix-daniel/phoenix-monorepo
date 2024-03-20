@@ -1,0 +1,35 @@
+<phoenix-ncs-header></phoenix-ncs-header>
+<div nxLayout="grid max width">
+  <div nxRow>
+    <div nxCol="12">
+      <nav aria-label="Breadcrumb" style="margin: 10px 0 0 30px">
+        <ol nxBreadcrumb>
+          <li *ngFor="let item of items; last as isLast">
+            <a nxBreadcrumbItem [routerLink]="isLast ? null : item.href">
+              {{ item.name }}
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <br />
+  <div nxRow>
+    <div nxCol="12,8,6,5,4,3,2" colOffset="1">
+      <phoenix-dashboard-card [apiNewsUrl]="apiNewsUrl" [id]="'3'"></phoenix-dashboard-card>
+    </div>
+    <div nxCol="12,8,6,5,4,3,2">
+      <phoenix-dashboard-card [apiNewsUrl]="apiNewsUrl" [id]="'2'"></phoenix-dashboard-card>
+    </div>
+    <div nxCol="12,8,6,5,4,3,2">
+      <phoenix-dashboard-card [apiNewsUrl]="apiNewsUrl" [id]="'1'"></phoenix-dashboard-card>
+    </div>
+    <div nxCol="12,8,6,5,4,3,2">
+      <phoenix-dashboard-card [apiNewsUrl]="apiNewsUrl" [id]="'4'"></phoenix-dashboard-card>
+    </div>
+    <div nxCol="12,8,6,5,4,3,2">
+      <phoenix-dashboard-card [apiNewsUrl]="apiNewsUrl" [id]="'3'"></phoenix-dashboard-card>
+    </div>
+  </div>
+</div>
+<phoenix-ncs-footer></phoenix-ncs-footer>

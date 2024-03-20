@@ -1,0 +1,93 @@
+{
+  "name": "ncs-webapp",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "phoenix",
+  "sourceRoot": "apps/ncs-webapp/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/ncs-webapp",
+        "index": "apps/ncs-webapp/src/index.html",
+        "browser": "apps/ncs-webapp/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/ncs-webapp/tsconfig.app.json",
+        "assets": [
+          "apps/ncs-webapp/src/assets",
+          {
+            "glob": "**/*",
+            "input": "assets/favicons",
+            "output": "assets/favicons"
+          },
+          {
+            "glob": "**/*",
+            "input": "assets/images",
+            "output": "assets/images"
+          }
+        ],
+        "styles": ["apps/ncs-webapp/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/ncs-webapp/src/environments/environment.ts",
+              "with": "apps/ncs-webapp/src/environments/environment.prod.ts"
+            }
+          ],
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "100kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "port" : 4300
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "ncs-webapp:build:production"
+        },
+        "development": {
+          "buildTarget": "ncs-webapp:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "ncs-webapp:build"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "ncs-webapp:build",
+        "staticFilePath": "dist/apps/ncs-webapp/browser"
+      }
+    }
+  }
+}

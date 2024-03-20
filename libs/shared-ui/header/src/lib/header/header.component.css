@@ -1,0 +1,18 @@
+@import "node_modules/@allianz/ngx-ndbx/css/ndbx-base.css";
+@import "node_modules/@allianz/ngx-ndbx/css/themes/ndbx.css";
+
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  text-align: center;
+  z-index: 999;
+}
+.left30px {
+  margin-left: 30px
+}
+
+.header-space {
+  height: 150px;
+}

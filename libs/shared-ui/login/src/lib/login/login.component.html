@@ -1,0 +1,62 @@
+<div class="container" >
+  <div class="form-container login-container">
+    <form [formGroup]="loginForm">
+
+      <h1 class="allianz-title">Allianz Indonesia</h1>
+      <h1>Login</h1>
+
+      <div nxRow>
+        <div nxCol="12">
+          <nx-formfield label="Username">
+            <input
+              id="inputUsername"
+              required
+              nxInput
+              nxFormfieldError
+              [formControlName]="'username'" />
+            <nx-error nxFormfieldError appearance="text">
+              You have to fill in username to continue
+            </nx-error>
+          </nx-formfield>
+
+          <nx-formfield label="Password">
+            <input
+              id="inputPassword"
+              required
+              nxInput
+              #testInput
+              type="password"
+              [formControlName]="'password'"
+            />
+            <nx-password-toggle
+              [control]="testInput"
+              ariaLabel="Your custom show password label"
+              nxFormfieldSuffix
+            ></nx-password-toggle>
+            <nx-error nxFormfieldError appearance="text">
+              You have to fill in password to continue
+            </nx-error>
+          </nx-formfield>
+        </div>
+      </div>
+
+
+      <button nxButton
+              id="buttonLogin"
+              [disabled]="loginForm.invalid || isLoading"
+              (click)="login()">
+        Login &nbsp; <nx-spinner *ngIf="isLoading" ></nx-spinner>
+      </button>
+
+      <br />
+      <nx-error *ngIf="ntfEnable">
+        <span *ngIf="ntfType==='errorLogin'"> Failed to login, You have entered invalid credential or Your account is locked. </span>
+        <span *ngIf="ntfType==='errorSessionExpired'"> Session has expired, please try again </span>
+      </nx-error>
+
+    </form>
+  </div>
+  <div class="form-container image-container">
+
+  </div>
+</div>

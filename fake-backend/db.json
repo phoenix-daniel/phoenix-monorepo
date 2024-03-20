@@ -1,0 +1,47 @@
+{
+  "login": {
+    "requestId": "9f2c69f2-b63b-4a06-9670-f267c752915d",
+    "responseCode": 200,
+    "statusCode": "NCS001",
+    "responseDescription": "Operasi sukses",
+    "channel": "web",
+    "language": "in_ID",
+    "requestTime": "2023-08-23 10:45:37.0416",
+    "responseTime": "2023-08-23 10:45:37.0416",
+    "replyMessage": {
+      "failedLoginAttemps": 0,
+      "email": "daniel@Allianz.co.id",
+      "mobileNumber": null,
+      "firstName": "Daniel",
+      "lastName": "Daniel",
+      "lastLoginTime": "2024-08-23T03:34:15.595+00:00",
+      "requiresPasswordChange": null,
+      "groupList": ["ADMIN"],
+      "issuer": "ALLIANZ-LIFE",
+      "oldUser": true
+    },
+    "additionalAttributeList": null
+  },
+  "news": [
+    {
+      "id":"1",
+      "title":"SmartMed Premier",
+      "description":"Sebagai asuransi kesehatan individu dan keluarga, SmartMed Premier menjangkau wilayah di seluruh dunia serta memberikan proteksi secara komprehensif saat Anda atau keluarga sakit.\n\nAsuransi kesehatan SmartMed Premier menyediakan Manfaat Dasar Rawat Inap dan Manfaat Tambahan seperti Persalinan, Rawat Jalan, dan Rawat Gigi serta memiliki manfaat spesial yaitu penggantian biaya Kemoterapi, Hemodialisis, HIV/AIDS, biaya pemakaman dan evakuasi darurat serta pemulangan jenazah"
+    },
+    {
+      "id":"2",
+      "title":"SmartMed Cancer",
+      "description":"SmartMed Cancer merupakan asuransi kesehatan rider pertama\ndi Indonesia khusus untuk perlindungan atas risiko kanker."
+    },
+    {
+      "id":"3",
+      "title":"SmartHealth Maxi Violet",
+      "description":"SmartHealth Maxi Violet merupakan asuransi kesehatan yang dapat digunakan secara perorangan dan keluarga.\nSebagai produk asuransi kesehatan, SmartHealth Maxi Violet memberikan penggantian biaya perawatan apabila pemegang polis atau keluarga menderita suatu penyakit atau mengalami kecelakaan disertai variasi Plan yang terjangkau.\n\nSmartHealth Maxi Violet memiliki Manfaat Dasar Rawat Inap dan Manfaat Tambahan yaitu Rawat Jalan, Rawat Gigi, dan Persalinan."
+    },
+    {
+      "id":"4",
+      "title":"AlliSya Care",
+      "description": "AlliSya Care merupakan produk asuransi kesehatan dari Allianz yang dikelola secara syariah di mana Peserta saling tolong-menolong dengan Peserta lainnya melalui kontribusi yang dibayarkan untuk menghadapi suatu peristiwa yang tidak diharapkan.\n\nAlliSya Care dapat digunakan sebagai asuransi kesehatan perorangan atau keluarga dengan berbagai pilihan Plan yang mengerti kebutuhan setiap Peserta."
+    }
+  ]
+}

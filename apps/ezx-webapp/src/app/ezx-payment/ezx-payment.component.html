@@ -1,0 +1,33 @@
+<phoenix-ezx-header></phoenix-ezx-header>
+<div nxLayout="grid max width">
+  <div nxRow>
+    <div nxCol="12">
+      <nav aria-label="Breadcrumb" style="margin: 10px 0 0 30px">
+        <ol nxBreadcrumb>
+          <li *ngFor="let item of items; last as isLast">
+            <a nxBreadcrumbItem [routerLink]="isLast ? null : item.href">
+              {{ item.name }}
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <br />
+  <div nxRow>
+    <div nxCol="12" colOffset="0,3,4">
+      <phoenix-payment></phoenix-payment>
+    </div>
+
+  </div>
+  <div nxRow>
+    <hr />
+    <div nxCol="12" colOffset="0,3,4">
+      <button nxButton="primary small-medium" type="button">Payment</button> &nbsp;
+      <button nxButton="secondary small-medium" type="button">Cancel</button>
+    </div>
+  </div>
+</div>
+<phoenix-ezx-footer></phoenix-ezx-footer>
+

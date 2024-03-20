@@ -1,0 +1,13 @@
+<nx-card highlight style="width:100%">
+  <div nxHighlightHeader> Allianz News </div>
+  <nx-card-header>
+    <nx-spinner *ngIf="!newsData.title" size="large"></nx-spinner>
+    <h3 nxHeadline="subsection-small" class="nx-margin-bottom-2m">
+      {{ newsData.title }}
+    </h3>
+  </nx-card-header>
+  <hr *ngIf="newsData.title" />
+  <p nxCopytext="normal">
+    {{ newsData.description }}
+  </p>
+</nx-card>
